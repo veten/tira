@@ -6,13 +6,23 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * MatriisiLaskinTest-luokka testaa MatriisiLaskin-luokan metodit
+ */
 public class MatriisiLaskinTest {
 
+    /**
+     * MatriisiLaskin, jota käytetään odotusarvoisesti testeissä, ellei testissä
+     * ole tarpeen luoda omaa laskinta
+     */
     private static MatriisiLaskin laskin;
 
     public MatriisiLaskinTest() {
     }
 
+    /**
+     * Alustetaan MatriisiLaskin antamalla sille kaksi matriisia
+     */
     @BeforeClass
     public static void setUpClass() {
         int[][] mat1 = new int[][]{
@@ -40,6 +50,10 @@ public class MatriisiLaskinTest {
     public void tearDown() {
     }
 
+    /**
+     * Metodi vertaa muutamaa matriisiYhteenlaskun tuottaman matriisin arvoa
+     * vastaaviin mekaanisesti laskettuihin arvoihin.
+     */
     @Test
     public void matriisiYhteenlaskuTest() {
         assertTrue(laskin.matriisiYhteenlasku()[1][1] == 13);
@@ -47,6 +61,10 @@ public class MatriisiLaskinTest {
         assertTrue(laskin.matriisiYhteenlasku()[1][0] == 9);
     }
 
+    /**
+     * Metodi vertaa muutamaa matriisiKertolaskun tuottaman matriisin arvoa
+     * vastaaviin mekaanisesti laskettuihin arvoihin.
+     */
     @Test
     public void matriisiKertolaskuTest() {
         assertTrue(laskin.matriisiKertolasku()[1][1] == 107);
@@ -54,6 +72,10 @@ public class MatriisiLaskinTest {
         assertTrue(laskin.matriisiKertolasku()[1][0] == 104);
     }
 
+    /**
+     * Metodi luo muutaman uuden laskimen, joilla ei voida suorittaa haluttuja
+     * laskutoimituksia, ja testaa, palauttaako metodi halutusti null-arvon
+     */
     @Test
     public void matriisiLaskuEiMaariteltyTest() {
         int[][] mat3 = new int[][]{

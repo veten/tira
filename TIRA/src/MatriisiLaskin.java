@@ -1,6 +1,6 @@
 
 /**
- * Matriisilaskin -luokka toteuttaa sille annetuille matriiseille
+ * MatriisiLaskin-luokka toteuttaa sille annetuille matriiseille
  * matriisilaskutoimituksia
  */
 public class MatriisiLaskin {
